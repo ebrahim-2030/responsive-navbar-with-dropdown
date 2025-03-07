@@ -6,6 +6,7 @@ const App = () => {
     <div>
       <Router>
         <Navbar />
+        <h1 className="mt-40 text-center text-4xl text-[#246d91] font-bold ">Welcome To My Project.</h1>
       </Router>
     </div>
   )
