@@ -138,7 +138,16 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu Component */}
-      <MobileMenu {...{ navLinks, menuOpen, setMenuOpen, dropdown, setDropdown }}/>
+      <MobileMenu
+        {...{
+          navLinks,
+          menuOpen,
+          setMenuOpen,
+          setMenuOpen,
+          dropdown,
+          setDropdown,
+        }}
+      />
     </nav>
   );
 };

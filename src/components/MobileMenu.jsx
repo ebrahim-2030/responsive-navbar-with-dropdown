@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { Link, NavLink } from "react-router-dom";
 import Button from "./Button";
@@ -9,10 +9,42 @@ import { MdOutlineArrowOutward } from "react-icons/md";
  * MobileMenu Component
  * Renders a responsive navigation menu for mobile devices.
  */
-const MobileMenu = ({ menuOpen, dropdown, setDropdown, navLinks }) => {
+const MobileMenu = ({
+  menuOpen,
+  setMenuOpen,
+  dropdown,
+  setDropdown,
+  navLinks,
+}) => {
+  const menuRef = useRef(null);
+
+  // Close the menu when clicking outside or resizing the page
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setMenuOpen(false);
+        setDropdown(false);
+      }
+    };
+
+    const handleResize = () => {
+      setMenuOpen(false);
+      setDropdown(false);
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [setMenuOpen, setDropdown]);
+
   return (
     // Main container for the mobile menu, expands when menuOpen is true
     <div
+      ref={menuRef}
       className={`overflow-hidden transition-all duration-300 ${
         menuOpen ? "max-h-[400px] mt-8 mb-2" : "max-h-0"
       }`}
@@ -52,7 +84,9 @@ const MobileMenu = ({ menuOpen, dropdown, setDropdown, navLinks }) => {
                 {/* Dropdown list */}
                 <ul
                   className={`flex flex-col gap-4 text-sm ml-4 overflow-hidden transition-all duration-300 ${
-                    dropdown ? "max-h-[120px] mt-3 opacity-100" : "max-h-0 opacity-0"
+                    dropdown
+                      ? "max-h-[120px] mt-3 opacity-100"
+                      : "max-h-0 opacity-0"
                   }`}
                 >
                   {link.sublinks?.map((sub) => (
@@ -72,7 +106,7 @@ const MobileMenu = ({ menuOpen, dropdown, setDropdown, navLinks }) => {
                           <span>{sub.name}</span>
                         </div>
                         {/* Arrow icon */}
-                        <MdOutlineArrowOutward className="text-lg" /> 
+                        <MdOutlineArrowOutward className="text-lg" />
                       </Link>
                     </li>
                   ))}
