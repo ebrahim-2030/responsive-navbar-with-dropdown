@@ -1,8 +1,17 @@
-# React + Vite
+# Responsive Navbar with Dropdown
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive navbar with a dropdown menu built using React and Tailwind CSS.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## 📌 Features
+- ✅ Fully responsive design (mobile-first).
+- ✅ Dropdown menu for navigation links.
+- ✅ Built with **React** and styled with **Tailwind CSS**.
+- ✅ Deployed on **Vercel**.
+
+## 🛠️ Getting Started
+### 1️⃣ Clone the repository:
+```bash
+git clone https://github.com/yourusername/responsive-navbar-with-dropdown.git
+cd responsive-navbar-with-dropdown
