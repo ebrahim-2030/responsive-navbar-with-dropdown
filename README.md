@@ -14,5 +14,5 @@ A responsive navbar with a dropdown menu built using React and Tailwind CSS.
 ## 🛠️ Getting Started
 ### 1️⃣ Clone the repository:
 ```bash
-git clone https://github.com/yourusername/responsive-navbar-with-dropdown.git
+git clone https://github.com/ebrahim-2030/responsive-navbar-with-dropdown.git
 cd responsive-navbar-with-dropdown
