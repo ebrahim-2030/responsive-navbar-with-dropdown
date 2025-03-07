@@ -2,7 +2,8 @@
 
 A responsive navbar with a dropdown menu built using React and Tailwind CSS.
 
-
+## 🚀 Live Demo
+🔗 [View Demo](https://responsive-navbar-with-dropdown.vercel.app/)
 
 ## 📌 Features
 - ✅ Fully responsive design (mobile-first).
